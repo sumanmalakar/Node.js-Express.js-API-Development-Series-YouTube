@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    color: wheat;
+}
+
+.btn{
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: blueviolet;
+    font-size: 1.2rem;
+    border-radius: 10%;
+}
