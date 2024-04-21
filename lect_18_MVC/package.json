@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "type": "module",
+  "name": "lect_18_mvc",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
