@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Shortener</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #262641;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 20px rgba(0, 128, 255, 0.5);
+            width: 500px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out, pulseBorder 3s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseBorder {
+            0% {
+                box-shadow: 0px 0px 20px rgba(0, 128, 255, 0.5);
+            }
+
+            50% {
+                box-shadow: 0px 0px 30px rgba(0, 128, 255, 0.7);
+            }
+
+            100% {
+                box-shadow: 0px 0px 20px rgba(0, 128, 255, 0.5);
+            }
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #c7c7e2;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 2px solid #333366;
+            background-color: #333366;
+            color: #ffffff;
+            font-size: 20px;
+            transition: border-color 0.3s;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        input[type="text"]:focus {
+            border-color: #6a00ff;
+            outline: none;
+        }
+
+        button {
+            padding: 16px 32px;
+            background-color: #aaff00;
+            color: #0a0909;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #4a0082;
+            color: white;
+        }
+
+        p {
+            margin-top: 25px;
+            font-size: 22px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        a {
+            color: #8cfd14;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortener YouTube</h1>
+        <form action="/shorten" method="post">
+            <label for="longUrl">Enter long URL:</label>
+            <input type="text" id="longUrl" name="longUrl" required>
+            <button type="submit">Shorten</button>
+        </form>
+        <% if(shortUrl) { %>
+        <p>Short Url : <a href="<%= shortUrl %>" target="_blank">
+            <%= shortUrl %>
+        </a>
+            
+         </p> <%} %>
+    </div>
+</body>
+</html>
