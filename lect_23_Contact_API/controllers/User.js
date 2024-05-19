@@ -38,7 +38,9 @@ export const login = async (req, res) => {
 
   if (!validPass) return res.json({ message: "Invalid Credential" });
 
-  const token = jwt.sign({userId:user._id},'!@#$%^&*()',{expiresIn:'1d'})
+  const token = jwt.sign({ userId: user._id }, process.env.JWT_Secret, {
+    expiresIn: "1d",
+  });
 
   res.json({ message: `Welcome back ${user.name}`,token });
 };
